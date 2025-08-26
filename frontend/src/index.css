@@ -1,0 +1,109 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+
+@layer tailwind-base, primereact, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+
+
+
+
+/* homepage */
+.home {
+ grid-template-columns: 3fr 1fr;
+  
+}
+
+/* new workout form */
+/* label, input {
+  @apply block;
+} */
+.p-password-input{
+  @apply mb-4;
+}
+
+input {
+  @apply p-3 mt-4 mb-8 w-full  border-blue-600 border-2 rounded-lg;
+} 
+
+
+
+div.error {
+  @apply  bg-red-200 border border-error text-error rounded-md my-5  ;
+}
+div.errorDiv {
+  @apply  p-4 bg-red-200 border border-error text-error rounded-md my-5  ;
+}
+input.error {
+  @apply border border-error ;
+}
+
+
+nav a, nav button {
+  @apply ml-4;
+}
+
+
+/* auth forms */
+/* .form-container {
+  height: auto;
+ @apply max-w-4xl    mx-auto p-20 m-8 ml-8 bg-violet-100  border-white border-2 rounded-3xl flex flex-col items-center
+ 
+} */
+
+.form-container h3{
+ 
+  @apply text-3xl  text-form_title text-left font-semibold mb-5
+}
+
+.form-container label {
+  /* margin-bottom: 8px; */
+  @apply mb-2
+}
+
+.form-container .input-container {
+
+  @apply w-full mb-4
+}
+
+
+
+
+.w-full .p-icon {
+ 
+  @apply  text-xl relative bottom-1
+  
+}
+
+
+/* prime react custom styles */
+#quitMenuItem .p-menuitem-link .p-menuitem-icon,
+#quitMenuItem .p-menuitem-link .p-menuitem-text {
+  @apply text-red-500
+}
+
+.span_tag{
+
+    background-image: linear-gradient(to right,var(--tw-gradient-stops));
+    --tw-gradient-from: #7a76fc var(--tw-gradient-from-position);
+    --tw-gradient-to: rgba(122,118,252,0) var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from),var(--tw-gradient-to);
+    --tw-gradient-to: #61a4eb var(--tw-gradient-to-position);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent
+}
+.text-iso-gray {
+  --tw-text-opacity: 1;
+  color: rgb(71 84 103/var(--tw-text-opacity));
+}
+
