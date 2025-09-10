@@ -28,6 +28,8 @@ app.use((req, res, next) => {
 app.use("/api/workouts", workoutRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/calculate", calculateRouter);
+import dotenv from "dotenv";
+dotenv.config();
 
 // connect to db
 
