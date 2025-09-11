@@ -10,11 +10,7 @@ import cors from "cors";
 
 // express app
 const app = express();
-const workoutRoutes = workoutRouter;
-const userRoutes = userRouter;
 
-// Debug: Print SECRET to verify .env loading
-console.log("JWT SECRET from .env:", process.env.SECRET);
 // middleware
 app.use(express.json());
 app.use(cors());
@@ -25,23 +21,18 @@ app.use((req, res, next) => {
 });
 
 // routes
-app.use("/api/workouts", workoutRoutes);
-app.use("/api/user", userRoutes);
+app.use("/api/workouts", workoutRouter);
+app.use("/api/user", userRouter);
 app.use("/api/calculate", calculateRouter);
-import dotenv from "dotenv";
-dotenv.config();
 
 // connect to db
-
 mongoose
-  .connect(process.env.MONGO_URI, {
-    dbName: process.env.DB_NAME,
-  })
+  .connect(process.env.MONGO_URI)
   .then(() => {
     // listen for requests
     app.listen(process.env.PORT, () => {
       console.log(
-        `Connected to db successfully,Server is running on port ${process.env.PORT}`
+        `Connected to db successfully, Server is running on port ${process.env.PORT}`
       );
     });
   })
